@@ -1,5 +1,6 @@
 import 'package:checkout_payment1/features/payment/presentation/views/widgets/thank_you_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'custom_check_icon.dart';
 import 'custom_dashed_line.dart';
@@ -10,10 +11,11 @@ class ThankYouViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 27),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
+
           const ThankYouCard(),
           Positioned(
             bottom: MediaQuery.sizeOf(context).height * 0.2,
@@ -22,6 +24,11 @@ class ThankYouViewBody extends StatelessWidget {
               backgroundColor: Colors.white,
             ),
           ),
+          Positioned(
+            top: -35,
+
+              left: -1,
+              child:  SvgPicture.asset("assets/images/arrow.svg")),
           Positioned(
             bottom: MediaQuery.sizeOf(context).height * 0.2,
             right: -20,

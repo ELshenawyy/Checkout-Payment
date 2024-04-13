@@ -48,4 +48,11 @@ abstract class Styles
     fontWeight: FontWeight.w500,
     height: 0,
   );
+  static  TextStyle style16 = TextStyle(
+    color:  const Color(0xff000000).withOpacity(0.7),
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    fontFamily: "Inter",
+    height: 0,
+  );
 }
