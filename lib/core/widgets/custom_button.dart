@@ -2,7 +2,7 @@ import 'package:checkout_payment1/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key,this.onTap, required this.title});
+  const CustomButton({super.key, this.onTap, required this.title});
   final void Function()? onTap;
   final String title;
 

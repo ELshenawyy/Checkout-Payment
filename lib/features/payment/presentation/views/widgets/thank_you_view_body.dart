@@ -15,7 +15,6 @@ class ThankYouViewBody extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-
           const ThankYouCard(),
           Positioned(
             bottom: MediaQuery.sizeOf(context).height * 0.2,
@@ -25,10 +24,9 @@ class ThankYouViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: -35,
-
+              top: -35,
               left: -1,
-              child:  SvgPicture.asset("assets/images/arrow.svg")),
+              child: SvgPicture.asset("assets/images/arrow.svg")),
           Positioned(
             bottom: MediaQuery.sizeOf(context).height * 0.2,
             right: -20,

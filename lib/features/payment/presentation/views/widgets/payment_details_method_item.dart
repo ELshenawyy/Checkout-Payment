@@ -1,10 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PaymentMethodItem extends StatelessWidget {
   const PaymentMethodItem({
-    super.key,this.isActive = false, required this.image,
+    super.key,
+    this.isActive = false,
+    required this.image,
   });
 
   final bool isActive;
@@ -18,15 +19,15 @@ class PaymentMethodItem extends StatelessWidget {
       width: 103,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side:  BorderSide(
+          side: BorderSide(
             width: 1.50,
-          color:   isActive ? const Color(0xFF34A853) : Colors.grey ,
+            color: isActive ? const Color(0xFF34A853) : Colors.grey,
           ),
           borderRadius: BorderRadius.circular(15),
         ),
-        shadows:  [
+        shadows: [
           BoxShadow(
-            color: isActive? const Color(0xFF34A853) : Colors.white,
+            color: isActive ? const Color(0xFF34A853) : Colors.white,
             offset: const Offset(0, 0),
             blurRadius: 4,
             spreadRadius: 0,

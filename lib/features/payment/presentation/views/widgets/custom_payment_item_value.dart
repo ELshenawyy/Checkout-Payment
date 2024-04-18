@@ -1,4 +1,3 @@
-
 import 'package:checkout_payment1/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 

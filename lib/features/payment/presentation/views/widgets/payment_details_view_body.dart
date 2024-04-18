@@ -1,4 +1,3 @@
-
 import 'package:checkout_payment1/core/widgets/custom_button.dart';
 import 'package:checkout_payment1/features/payment/presentation/views/thank_you_view.dart';
 import 'package:checkout_payment1/features/payment/presentation/views/widgets/payment_method_list_view.dart';

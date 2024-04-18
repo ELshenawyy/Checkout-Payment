@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -12,8 +11,7 @@ class CreditCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding:
-        const EdgeInsets.symmetric(horizontal: 22, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 16),
         width: 305,
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
@@ -30,14 +28,8 @@ class CreditCardWidget extends StatelessWidget {
             Text.rich(
               TextSpan(
                 children: [
-                  const TextSpan(
-                      text: "Credit Card\n",
-                      style: Styles.style18
-                  ),
-                  TextSpan(
-                      text: "Mastercard **78",
-                      style: Styles.style16
-                  ),
+                  const TextSpan(text: "Credit Card\n", style: Styles.style18),
+                  TextSpan(text: "Mastercard **78", style: Styles.style16),
                 ],
               ),
             ),
