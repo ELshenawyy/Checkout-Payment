@@ -1,16 +1,32 @@
-import 'package:checkout_payment1/core/utils/api_servise.dart';
+import 'package:checkout_payment1/core/utils/api_service.dart';
 import 'package:checkout_payment1/features/payment/payment_intent_input_model.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
-class StripeServise
-{
-  final ApiServise apiServise = ApiServise();
+import '../../features/payment/data/models/payment_intent_model/payment_intent_model.dart';
+import 'api_key.dart';
 
- Future<PaymentIntentInputModel> createPaymentIntent(PaymentIntentInputModel paymentIntentInputModel) async
- {
-    var response = await apiServise.post(body: PaymentIntentInputModel.toJson(), url: "https://api.stripe.com/v1/payment_intents", token: ApiKey.secretKey, ); 
-    
-    var paymentIntentInputModel = PaymentIntentInputModel.fromJsom(response.data);
+class StripeService {
+  final ApiServise apiService = ApiServise();
 
-    return paymentIntentInputModel;
- }
+  Future<PaymentIntentModel> createPaymentIntent(
+      PaymentIntentInputModel paymentIntentInputModel) async {
+    var response = await apiService.post(
+      body: paymentIntentInputModel.toJson(),
+      url: "https://api.stripe.com/v1/payment_intents",
+      token: ApiKey.secretKey,
+    );
+
+    var paymentIntentModel = PaymentIntentModel.fromJson(response.data);
+
+    return paymentIntentModel;
+  }
+
+  Future initPaymentSheet({required String customerEphemeralKeySecret}) async {
+    Stripe.instance.initPaymentSheet(
+      paymentSheetParameters: SetupPaymentSheetParameters(
+        customerEphemeralKeySecret: customerEphemeralKeySecret,
+        merchantDisplayName: "Elshnawy",
+      ),
+    );
+  }
 }
