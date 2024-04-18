@@ -12,7 +12,7 @@ class ApiServise {
       url,
       data: body,
       options:
-          Options(headers: {"Authorization": token}, contentType: contentType),
+          Options(headers: {"Authorization": "Bearer $token"}, contentType: contentType,),
     );
 
     return response;
