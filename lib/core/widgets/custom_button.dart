@@ -1,10 +1,14 @@
 import 'package:checkout_payment1/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTap, required this.title});
+  const CustomButton(
+      {super.key, this.onTap, required this.title, this.isLoading = false});
+
   final void Function()? onTap;
   final String title;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +24,13 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            title,
-            textAlign: TextAlign.center,
-            style: Styles.style22,
-          ),
+          child: isLoading
+              ? const CircularProgressIndicator()
+              : Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: Styles.style22,
+                ),
         ),
       ),
     );
