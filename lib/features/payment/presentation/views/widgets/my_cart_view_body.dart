@@ -1,7 +1,10 @@
 import 'package:checkout_payment1/core/widgets/custom_button.dart';
+import 'package:checkout_payment1/features/payment/data/repos/checkout_repo_impl.dart';
+import 'package:checkout_payment1/features/payment/presentation/manager/cubit/payment_cubit.dart';
 import 'package:checkout_payment1/features/payment/presentation/views/widgets/payment_method_bottom_sheet.dart';
 import 'package:checkout_payment1/features/payment/presentation/views/widgets/total_price_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'cart_info_item.dart';
 
@@ -65,7 +68,12 @@ class MyCartViewBody extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)),
                   builder: (context) {
-                    return const PaymentMethodsBottomSheet();
+                    return BlocProvider(
+                      create: (context) => PaymentCubit(
+                        CheckoutRepoImpl(),
+                      ),
+                      child: const PaymentMethodsBottomSheet(),
+                    );
                   });
             },
           ),

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-class ApiServise {
+class ApiService {
   final Dio dio = Dio();
 
   Future<Response> post(
@@ -11,8 +11,10 @@ class ApiServise {
     var response = await dio.post(
       url,
       data: body,
-      options:
-          Options(headers: {"Authorization": "Bearer $token"}, contentType: contentType,),
+      options: Options(
+        headers: {"Authorization": "Bearer $token"},
+        contentType: contentType,
+      ),
     );
 
     return response;
