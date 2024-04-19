@@ -63,7 +63,7 @@ class StripeService {
       body: {
         'customer': customerId,
       },
-      url: "https://api.stripe.com/v1/payment_intents",
+      url: "https://api.stripe.com/v1/ephemeral_keys",
       token: ApiKey.secretKey,
       headers: {
         "Authorization": "Bearer ${ApiKey.secretKey}",
